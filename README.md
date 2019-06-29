@@ -6,7 +6,7 @@ API for accessing neighborhood data
 
 ### Report
 Get an incident/crime report for the last 90 days by community name or address.  
-https://api.jatsby.com/report?query=arlington%20shores
+https://api.jatsby.com/report?query=arlington%20shores  
 https://api.jatsby.com/report?query=1230%20underhill%20drive  
 Returns a community report if possible, and an address report if a community couldn't be matched to the query.  
 
