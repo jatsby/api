@@ -22,3 +22,6 @@ Reports use data directly from the Jacksonville Sheriff's Office (JSO) to provid
 Each report uses the incidents specific to that neighborhood or address to provide useful information not available anywhere else. A letter grade is assigned using a proprietary algorithm- "A" communities are the best in the county, while "E" communities are among the worst. The letter grade is partially determined by the community's percentile- how many incidents it has compared to all the other mapped communities in the county (the 100th percentile contains communities with the *most* incidents).
 
 We provide specific details about _violent_ incidents- those that involve weapons or bodily injury. Patterns help identify bad neighbors by highlighting repeat incidents at the same address.
+
+## Web App
+There is a web app that uses this API in the works!
