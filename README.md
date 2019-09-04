@@ -1,3 +1,5 @@
+*the API will be down for a couple of days (early September) for a db schema change...hang tight!*
+
 # api
 API for accessing crime data at the "neighborhood" and "community" (subdivision) levels.
 *NOTE* The API is in beta and probably has bugs. Data automatically restricted to last 90 days and limited to Duval County, FL.
