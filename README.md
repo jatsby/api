@@ -1,29 +1,21 @@
-*the API will be down for a couple of days (early September) for a db schema change...hang tight!*
+#### Group - Get groups by groupName*, groupType, county
+groupName* - The name of the group. Fuzzy search, so “Mandarin P” will return “Mandarin Pines”
+groupType - the kind of group (“Block”, “Subdivision”, “Neighborhood”)
+county - the county the group is in. Can be string (e.g. “Duval”) or the internal ID of the county (26)
+https://api.jatsby.com/group?groupName=wolf%20creek
+https://api.jatsby.com/group?groupName=copperleaf&groupType=subdivision
+https://api.jatsby.com/group?groupName=3500%20Nightscape%20Circle
+https://api.jatsby.com/group?groupName=sutton%20lakes&groupType=subdivision
 
-# api
-API for accessing crime data at the "neighborhood" and "community" (subdivision) levels.
-*NOTE* The API is in beta and probably has bugs. Data automatically restricted to last 90 days and limited to Duval County, FL.
+#### Get Address - Get addresses by, well, address*, stateParcelId*, county
+address* - search string for address, “3508 Night” will return “3508 Nightscape Circle Jacksonville FL 32224"
+stateParcelId* - required if address is omitted and vice-versa
+county - same as above, “duval” or 26
+https://api.jatsby.com/address?address=3508%20Nightscape
+https://api.jatsby.com/address?stateParcelId=C26-000-322-2259-8
+https://api.jatsby.com/address?address=stanley%20steamer
 
-## GETs
-
-### Report
-Get an incident/crime report for the last 90 days by community name or address.  
-https://api.jatsby.com/report?query=arlington%20shores  
-https://api.jatsby.com/report?query=1230%20underhill%20dr  
-Returns a community report if possible, and an address report if a community couldn't be matched to the query.  
-
-### Search (GET)
-Search for communities or addresses for which we have data. Results are guaranteed to return a report via the Report endpoint.  
-https://api.jatsby.com/search?query=wolf%20creek  
-https://api.jatsby.com/search?query=3500%20nightscape%20cir  
-Returns up to 10 community and 10 neighborhood matches for the provided query.
-
-## Reports
-Reports use data directly from the Jacksonville Sheriff's Office (JSO) to provide detailed information at the *neighborhood* level- something never done before. 
-
-Each report uses the incidents specific to that neighborhood or community to provide useful information not available anywhere else.
-
-We provide specific details about _violent_ incidents- those that involve weapons or bodily injury. Patterns help identify bad neighbors by highlighting repeat incidents at the same address.
-
-## Web App
-There is a web app at https://jatsby.com!
+#### Get Incident - Get incidents by groupName*, groupType* and county*, filter by startDate, endDate (basically hard-coded to last 30 days so just omit 'em)
+https://api.jatsby.com/incident?groupName=Wolf%20Creek&groupType=2&county=duval
+https://api.jatsby.com/incident?groupName=copperleaf&groupType=2&county=duval
+https://api.jatsby.com/incident?groupName=sutton%20lakes&groupType=2&county=duval
